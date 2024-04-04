@@ -1,0 +1,38 @@
+Power BI Report Embedding in Flask App
+
+Overview:
+This Flask application is designed to integrate with Microsoft Power BI embedding to display Power BI reports within a web application.
+
+Requirements:
+ * PowerBI Account with (Pro or above license)
+ * Microsoft Azure Account
+
+Technologies Used:
+ * PowerBI
+ * Microsoft Azure - Active Directory, App Registrations
+ * Python
+ * Flask 
+
+Setup Instructions:
+
+1. Setting up PowerBI Environment:
+   * Create a report in PowerBI Desktop and publish to PowerBI service
+   * Login to your PowerBI service, and capture workspace id and report id or the report that published earlier.
+
+2. Setting up Embed Environment:
+    * Login to your Azure portal and create a Service Principal (Application) object
+    * Get into API Permissions and allow required access, 
+        1. App.Read.All
+        2. Dashboard.Read.All
+        3. Reports.Read.All
+        4. Workspaces.Read.All
+        5. Datasets.Read.All
+    * Create a Client secret in "Certificates & secrets" tab
+    * Capture client id, tenant id, client secret value
+
+3. Running the Application
+    * Open the code root directory and open config.py
+    * Add the requried values here (client id, client secret, tenant id, workspace id, report id, powerbi username, powerbi password)
+    * Run the flask Application
+    * By default, Flask app will run on "http://127.0.0.1:5000/",
+    * Get into the the URL to view your embedded report.
